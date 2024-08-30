@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.updateactivedirectoryjavafx.Controller.MainController">
+   <children>
+      <TextField fx:id="mUserTextArea" layoutX="446.0" layoutY="108.0" />
+      <TextField fx:id="mPasswordTextArea" layoutX="446.0" layoutY="170.0" />
+      <Button fx:id="mLogInButton" layoutX="495.0" layoutY="244.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="102.0" text="Log In" />
+      <Label layoutX="64.0" layoutY="112.0" text="Name" />
+      <TextField fx:id="mNameTextArea" layoutX="158.0" layoutY="112.0" />
+      <Label layoutX="386.0" layoutY="112.0" text="User ID" />
+      <Label layoutX="64.0" layoutY="170.0" text="Department" />
+      <TextField fx:id="mDepartmentTextArea" layoutX="158.0" layoutY="170.0" />
+      <Label layoutX="64.0" layoutY="236.0" text="Location" />
+      <TextField fx:id="mLocationTextArea" layoutX="158.0" layoutY="236.0" />
+      <Label layoutX="64.0" layoutY="296.0" text="Mailcode" />
+      <TextField fx:id="mMailcodeTextArea" layoutX="158.0" layoutY="296.0" />
+      <Label layoutX="386.0" layoutY="174.0" text="Password" />
+      <Separator layoutX="347.0" layoutY="61.0" orientation="VERTICAL" prefHeight="328.0" prefWidth="6.0" />
+      <Label layoutX="478.0" layoutY="70.0" text="Log In" />
+      <Label layoutX="158.0" layoutY="70.0" text="Employee" />
+      <Separator layoutX="652.0" layoutY="61.0" orientation="VERTICAL" prefHeight="334.0" prefWidth="6.0" />
+      <Label layoutX="742.0" layoutY="70.0" text="Database &amp; Excel " />
+      <Button fx:id="mLoadDepartmentButton" layoutX="733.0" layoutY="108.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Load Department" />
+      <Button fx:id="mExcelButton" layoutX="733.0" layoutY="170.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Load Excel" />
+      <Label layoutX="864.0" layoutY="174.0" text="Sheet No." />
+      <TextField fx:id="mSheetNumberTextArea" layoutX="926.0" layoutY="170.0" prefHeight="25.0" prefWidth="64.0" />
+      <Button fx:id="mNextButton" layoutX="874.0" layoutY="330.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="114.0" text="Next">
+         <font>
+            <Font name="Cambria Math" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
