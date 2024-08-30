@@ -5,14 +5,17 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="errorMainPanel" prefHeight="263.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane fx:id="errorMainPanel" prefHeight="282.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="51.0" layoutY="42.0" text="Department" />
-      <Label layoutX="51.0" layoutY="98.0" text="Location" />
-      <Label layoutX="51.0" layoutY="158.0" text="Mail Code" />
-      <TextField fx:id="errorDepartmentTextField" layoutX="151.0" layoutY="38.0" />
-      <TextField fx:id="errorLocationTextField" layoutX="151.0" layoutY="94.0" />
-      <TextField fx:id="errorMailCodeTextField" layoutX="151.0" layoutY="154.0" />
-      <Button fx:id="errorSubmitButton" layoutX="369.0" layoutY="192.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="70.0" text="SUBMIT" />
+      <Label layoutX="50.0" layoutY="74.0" text="Department" />
+      <Label layoutX="50.0" layoutY="130.0" text="Location" />
+      <Label layoutX="50.0" layoutY="190.0" text="Mail Code" />
+      <TextField fx:id="errorDepartmentTextField" layoutX="150.0" layoutY="70.0" />
+      <TextField fx:id="errorLocationTextField" layoutX="150.0" layoutY="126.0" />
+      <TextField fx:id="errorMailCodeTextField" layoutX="150.0" layoutY="186.0" />
+      <Button fx:id="errorSubmitButton" layoutX="368.0" layoutY="224.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="70.0" text="SUBMIT" />
+      <Label fx:id="errorFormLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="32.0" text="Label" textAlignment="CENTER" />
+      <Label layoutX="319.0" layoutY="74.0" text="Empl ID" />
+      <TextField fx:id="errorFormEmplID" layoutX="378.0" layoutY="70.0" />
    </children>
 </AnchorPane>

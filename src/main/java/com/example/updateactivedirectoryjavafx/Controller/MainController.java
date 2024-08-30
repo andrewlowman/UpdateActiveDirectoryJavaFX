@@ -173,14 +173,9 @@ public class MainController implements Initializable {
                                 String mailCodeForDeptCode = rs.getString("mail_code");
 
                                 if(locationCodeForDeptCode == null||mailCodeForDeptCode == null||mailCodeForDeptCode.equals("VARIOUS MAIL CODE")){
-                                    ErrorFormController errorFormController = new ErrorFormController(driver,employeeID,deptName);
 
-                                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/updateactivedirectoryjavafx/errorform.fxml"));
-                                    fxmlLoader.setController(errorFormController);
-                                    Scene scene = new Scene(fxmlLoader.load());
-                                    Stage newstage = new Stage();
-                                    newstage.setScene(scene);
-                                    newstage.show();
+                                    openErrorWindow(driver,employeeID,deptName,"You have to do it yourself!");
+
                                     counter++;
                                     return;
                                 }
@@ -195,18 +190,11 @@ public class MainController implements Initializable {
 
                             }else{
                                 fillForm.clearPage();
-                                showDialog("There is no department in the database");
+                                //showDialog("There is no department in the database");
                                 mMailcodeTextArea.setText("");
                                 mLocationTextArea.setText("");
 
-                                ErrorFormController errorFormController = new ErrorFormController(driver,employeeID,deptName);
-
-                                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/updateactivedirectoryjavafx/errorform.fxml"));
-                                fxmlLoader.setController(errorFormController);
-                                Scene scene = new Scene(fxmlLoader.load());
-                                Stage newstage = new Stage();
-                                newstage.setScene(scene);
-                                newstage.show();
+                                openErrorWindow(driver,employeeID,deptName,"There is no department in the database");
 
                                 counter++;
                                 return;
@@ -228,14 +216,8 @@ public class MainController implements Initializable {
                             String mailCode = rs.getString("mail_code");
 
                             if(locationCode == null||mailCode == null||mailCode.equals("VARIOUS MAIL CODE")){
-                                ErrorFormController efc = new ErrorFormController(driver,employeeID,deptName);
+                                openErrorWindow(driver,employeeID,deptName,"Do it yourself!");
 
-                                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/updateactivedirectoryjavafx/errorform.fxml"));
-                                fxmlLoader.setController(efc);
-                                Scene scene = new Scene(fxmlLoader.load());
-                                Stage newstage = new Stage();
-                                newstage.setScene(scene);
-                                newstage.show();
                                 counter++;
                                 return;
                             }
@@ -247,18 +229,11 @@ public class MainController implements Initializable {
                             fillForm.nextEntry(employeeID,splitString(locationCode),splitString(mailCode));
                         }else{
                             fillForm.clearPage();
-                            showDialog("There is no department in the database");
+                           // showDialog("There is no department in the database");
                             mMailcodeTextArea.setText("");
                             mLocationTextArea.setText("");
 
-                            ErrorFormController errorFormController = new ErrorFormController(driver,employeeID,deptName);
-
-                            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/updateactivedirectoryjavafx/errorform.fxml"));
-                            fxmlLoader.setController(errorFormController);
-                            Scene scene = new Scene(fxmlLoader.load());
-                            Stage newstage = new Stage();
-                            newstage.setScene(scene);
-                            newstage.show();
+                            openErrorWindow(driver,employeeID,deptName,"There is no department in the database");
 
                             counter++;
                             return;
@@ -302,5 +277,16 @@ public class MainController implements Initializable {
         Scene dialogScene = new Scene(dialogVbox, 300, 200);
         dialog.setScene(dialogScene);
         dialog.show();
+    }
+
+    public void openErrorWindow(WebDriver driver,int employeeID, String deptName,String labelText) throws IOException {
+        ErrorFormController efc = new ErrorFormController(driver,employeeID,deptName, labelText);
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/updateactivedirectoryjavafx/errorform.fxml"));
+        fxmlLoader.setController(efc);
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage newstage = new Stage();
+        newstage.setScene(scene);
+        newstage.show();
     }
 }

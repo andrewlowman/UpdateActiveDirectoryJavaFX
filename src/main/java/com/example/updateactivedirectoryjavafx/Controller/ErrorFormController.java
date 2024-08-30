@@ -26,20 +26,28 @@ public class ErrorFormController implements Initializable {
     public TextField errorLocationTextField;
     public TextField errorMailCodeTextField;
     public Button errorSubmitButton;
+    public Label errorFormLabel;
+    public TextField errorFormEmplID;
     private WebDriver driver;
     private FillForm fillForm;
     private int employeeID = 0;
     private String departmentName = "";
+    private String labelText;
 
-    public ErrorFormController(WebDriver driver,int emplID, String deptName) {
+    public ErrorFormController(WebDriver driver,int emplID, String deptName,String textForLabel) {
         this.driver = driver;
         fillForm = new FillForm(driver);
         employeeID = emplID;
         departmentName = deptName;
+        labelText = textForLabel;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        errorFormLabel.setText(labelText);
+        errorFormEmplID.setText(String.valueOf(employeeID));
+
         errorSubmitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
